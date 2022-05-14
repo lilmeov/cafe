@@ -17,4 +17,9 @@ public class CafeService {
     public List<Cafe> getCafesByName(String name){
         return cafeRepository.getCafesByName(name);
     }
+
+    public Cafe saveNewCafe (String name, String description){
+        Cafe cafe = new Cafe(name, description);
+        return cafeRepository.save(cafe);
+    }
 }

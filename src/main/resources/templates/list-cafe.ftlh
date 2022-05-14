@@ -16,11 +16,11 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Add New Place</a>
+                        <a class="nav-link" href="/cafes/addNewPlace" tabindex="-1" >Add New Place</a>
                     </li>
                 </ul>
                 <form class="d-flex" method="get" action="/cafes/searchCafes">
-                    <input name="name" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" required>
+                    <input name="name" class="form-control me-2" type="search" placeholder="Search By Name" aria-label="Search" required>
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
             </div>

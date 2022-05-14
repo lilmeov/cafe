@@ -16,7 +16,7 @@ public class Cafe {
     private String name;
     private String description;
 //    private byte image;
-    private int rating;
+    private Integer rating;
     private String comment;
 
 
@@ -28,5 +28,8 @@ public class Cafe {
         this.comment = comment;
     }
 
-
+    public Cafe(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
 }

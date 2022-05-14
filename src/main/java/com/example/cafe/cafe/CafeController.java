@@ -28,4 +28,16 @@ public class CafeController {
         model.addAttribute("cafes", cafes);
         return "searched-cafes";
     }
+
+    @GetMapping("/addNewPlace")
+    public String giveAddCafePage(Model model){
+        return "add-cafe";
+    }
+
+    @GetMapping("/saveCafe")
+    public String addNewCafe(@RequestParam(value = "name") String name,
+                             @RequestParam(value = "description") String description){
+        cafeService.saveNewCafe(name, description);
+        return "redirect:/cafes/mainPage";
+    }
 }
