@@ -7,13 +7,19 @@
 </head>
 <body>
 <div class="container">
-    
-    <h2>${cafe.name}</h2>
+    <a href="/cafes/mainPage" class="list-group-item list-group-item-action list-group-item-primary" style="margin-top: 30px; width: 100px; margin-bottom: 30px">Home</a>
+
+    <h4>Title:  </h4>
+    <p>${cafe.name}</p>
+
+    <h4>Description:  </h4>
     <p>${cafe.description}</p>
-    <p>rating: ${rate}</p>
+    <h4>Rating:  </h4>
+    <p>${rate}</p>
     <img style="width: 300px; height: 300px" src="${cafe.image}">
 
     <h2>Comments:</h2>
+
 
     <#list comments as comment>
          <p><b>${comment.user.username} :</b>  ${comment.comment}</p>
@@ -24,7 +30,7 @@
             <label for="comment" class="form-label">Add Comment</label>
             <input name="cafeId" type="hidden" value="${cafe.id}">
             <input name="userName" type="hidden" value="${userName}">
-            <input name="comment" type="text" class="form-control" id="comment">
+            <input name="comment" type="text" class="form-control" id="comment" required>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

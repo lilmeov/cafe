@@ -30,15 +30,15 @@
     <form style="padding-top: 20px" method="get" action="/cafes/saveCafe">
         <div class="mb-3" >
             <label for="cafeName" class="form-label">Title</label>
-            <input name="name" type="text" class="form-control" id="cafeName" aria-describedby="cafeName">
+            <input name="name" type="text" class="form-control" id="cafeName" aria-describedby="cafeName" required>
         </div>
         <div class="mb-3" >
             <label for="cafeDesc" class="form-label">Description</label>
-            <input name="description" type="tel" class="form-control" id="cafeDesc" aria-describedby="cafeDesc">
+            <input name="description" type="tel" class="form-control" id="cafeDesc" aria-describedby="cafeDesc" required>
         </div>
         <div class="mb-3" >
             <label for="photoLink" class="form-label">PhotoLink</label>
-            <input name="link" type="text" class="form-control" id="photoLink" aria-describedby="photoLink">
+            <input name="link" type="text" class="form-control" id="photoLink" aria-describedby="photoLink" required>
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>

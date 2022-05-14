@@ -28,6 +28,9 @@ public class CafeController {
     private final RateService rateService;
 
 
+    private Integer averageRate;
+
+
     @GetMapping("/mainPage")
     public String giveCafeListPage(Model model, Authentication authentication){
 
@@ -90,8 +93,11 @@ public class CafeController {
         Integer sum = cafeRates.stream()
                 .reduce(0, Integer::sum);
 
-        Integer averageRate = Math.round(sum/size);
+        if (size==0){
+            size=1;
+        }
 
+        averageRate = Math.round(sum/size);
 
 
         Cafe cafe = cafeService.getCafeById(id);
