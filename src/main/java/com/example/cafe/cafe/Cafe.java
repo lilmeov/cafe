@@ -15,16 +15,18 @@ public class Cafe {
     private Long id;
     private String name;
     private String description;
-    private byte image;
+//    private byte image;
     private int rating;
     private String comment;
 
 
-    public Cafe(String name, String description, byte image, int rating, String comment) {
+    public Cafe(String name, String description, int rating, String comment) {
         this.name = name;
         this.description = description;
-        this.image = image;
+
         this.rating = rating;
         this.comment = comment;
     }
+
+
 }
