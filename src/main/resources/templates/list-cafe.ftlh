@@ -46,7 +46,7 @@
     <div style="padding-top: 120px" class="row d-flex justify-content-evenly">
             <#list cafes as cafe>
             <div  class="card" style="width: 18rem; margin-top: 20px">
-                <img src="..." class="card-img-top" alt="...">
+                <img src="${cafe.image}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">${cafe.name}</h5>
                     <p class="card-text">${cafe.description}</p>

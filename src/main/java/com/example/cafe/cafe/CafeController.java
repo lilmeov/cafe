@@ -2,13 +2,18 @@ package com.example.cafe.cafe;
 
 import com.example.cafe.comment.Comment;
 import com.example.cafe.comment.CommentService;
+import freemarker.template.utility.StringUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.util.Base64;
 import java.util.List;
 
 @Controller
@@ -53,10 +58,14 @@ public class CafeController {
         return "add-cafe";
     }
 
+
     @GetMapping("/saveCafe")
     public String addNewCafe(@RequestParam(value = "name") String name,
-                             @RequestParam(value = "description") String description){
-        cafeService.saveNewCafe(name, description);
+                             @RequestParam(value = "description") String description,
+                             @RequestParam(value = "link") String link){
+
+        cafeService.saveNewCafe(name, description, link);
+
         return "redirect:/cafes/mainPage";
     }
 

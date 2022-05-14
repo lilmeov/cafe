@@ -36,11 +36,10 @@
             <label for="cafeDesc" class="form-label">Description</label>
             <input name="description" type="tel" class="form-control" id="cafeDesc" aria-describedby="cafeDesc">
         </div>
-
-<#--        <div class="mb-3" >-->
-<#--            <label for="cafePhoto" class="form-label">Photo</label>-->
-<#--            <input name="description" type="file" class="form-control" id="cafePhoto" aria-describedby="cafePhoto">-->
-<#--        </div>-->
+        <div class="mb-3" >
+            <label for="photoLink" class="form-label">PhotoLink</label>
+            <input name="link" type="text" class="form-control" id="photoLink" aria-describedby="photoLink">
+        </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

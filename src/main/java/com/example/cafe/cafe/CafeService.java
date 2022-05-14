@@ -2,7 +2,10 @@ package com.example.cafe.cafe;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.util.Base64;
 import java.util.List;
 
 @Service
@@ -22,8 +25,9 @@ public class CafeService {
         return cafeRepository.getCafesByDescription(description);
     }
 
-    public Cafe saveNewCafe (String name, String description){
-        Cafe cafe = new Cafe(name, description);
+    public Cafe saveNewCafe(String name, String description, String link){
+        Cafe cafe = new Cafe(name, description, link);
+
         return cafeRepository.save(cafe);
     }
 

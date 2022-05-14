@@ -7,8 +7,10 @@
 </head>
 <body>
 <div class="container">
+    
     <h2>${cafe.name}</h2>
     <p>${cafe.description}</p>
+    <img style="width: 300px; height: 300px" src="${cafe.image}">
 
     <h2>Comments:</h2>
 
