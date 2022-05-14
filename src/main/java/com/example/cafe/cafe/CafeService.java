@@ -13,4 +13,8 @@ public class CafeService {
     public List<Cafe> getAllCafes(){
         return cafeRepository.findAll();
     }
+
+    public List<Cafe> getCafesByName(String name){
+        return cafeRepository.getCafesByName(name);
+    }
 }

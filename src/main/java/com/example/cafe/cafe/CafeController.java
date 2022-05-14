@@ -4,10 +4,7 @@ import com.example.cafe.user.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,5 +20,12 @@ public class CafeController {
         List<Cafe> cafes = cafeService.getAllCafes();
         model.addAttribute("cafes", cafes);
         return "list-cafe";
+    }
+
+    @GetMapping("/searchCafes")
+    public String giveSearchedCafes(Model model, @RequestParam(value = "name") String name){
+        List<Cafe> cafes =cafeService.getCafesByName(name);
+        model.addAttribute("cafes", cafes);
+        return "searched-cafes";
     }
 }

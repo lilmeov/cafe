@@ -19,8 +19,8 @@
                         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Add New Place</a>
                     </li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <form class="d-flex" method="get" action="/cafes/searchCafes">
+                    <input name="name" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" required>
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
             </div>
@@ -44,8 +44,6 @@
     </div>
 
 </div>
-
-
 
 
 
