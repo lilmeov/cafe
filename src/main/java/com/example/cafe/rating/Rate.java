@@ -25,5 +25,9 @@ public class Rate {
     @JoinColumn(name = "user_id")
     User user;
 
-
+    public Rate(Integer rate, Cafe cafe, User user) {
+        this.rate = rate;
+        this.cafe = cafe;
+        this.user = user;
+    }
 }
