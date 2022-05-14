@@ -20,6 +20,11 @@ public class UserController {
     private final CafeService cafeService;
 
 
+    @GetMapping("/login")
+    public String getLoginPage(){
+        return "login";
+    }
+
     @GetMapping("/register")
     public String registerUser(Model model, @RequestParam(value = "userName") String name,
                                @RequestParam(value = "password") String password){

@@ -1,5 +1,7 @@
 package com.example.cafe.cafe;
 
+import com.example.cafe.comment.Comment;
+import com.example.cafe.comment.CommentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.User;
@@ -14,6 +16,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CafeController {
     private final CafeService cafeService;
+    private final CommentService commentService;
 
 
     @GetMapping("/mainPage")
@@ -56,4 +59,23 @@ public class CafeController {
         cafeService.saveNewCafe(name, description);
         return "redirect:/cafes/mainPage";
     }
+
+    @GetMapping("/cafe/{id}")
+    public String giveSingleCafePage(Model model, @PathVariable Long id, Authentication authentication){
+        if (authentication==null){
+            model.addAttribute("userName", "null");
+        }else{
+            String name = authentication.getName();
+            model.addAttribute("userName", name);
+        }
+
+        List<Comment> comments = commentService.getCommentsByCafeId(id);
+
+        Cafe cafe = cafeService.getCafeById(id);
+        model.addAttribute("cafe", cafe);
+        model.addAttribute("comments", comments);
+
+        return "single-cafe";
+    }
+
 }

@@ -16,16 +16,13 @@ public class Cafe {
     private String name;
     private String description;
 //    private byte image;
-    private Integer rating;
-    private String comment;
+
 
 
     public Cafe(String name, String description, int rating, String comment) {
         this.name = name;
         this.description = description;
-
-        this.rating = rating;
-        this.comment = comment;
+//        this.image = image;
     }
 
     public Cafe(String name, String description) {

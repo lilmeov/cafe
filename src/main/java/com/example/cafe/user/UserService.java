@@ -15,4 +15,8 @@ public class UserService {
         User user = new User(userName, encoded, true, "USER");
         userRepository.save(user);
     }
+
+    public User getUserByName(String name){
+        return userRepository.getUserByUsername(name);
+    }
 }

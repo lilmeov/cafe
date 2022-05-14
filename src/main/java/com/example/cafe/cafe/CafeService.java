@@ -26,4 +26,8 @@ public class CafeService {
         Cafe cafe = new Cafe(name, description);
         return cafeRepository.save(cafe);
     }
+
+    public Cafe getCafeById (Long id){
+        return cafeRepository.getCafeById(id);
+    }
 }

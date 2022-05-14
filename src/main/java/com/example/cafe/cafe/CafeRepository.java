@@ -10,4 +10,6 @@ import java.util.List;
 public interface CafeRepository extends JpaRepository<Cafe, Long> {
     List<Cafe> getCafesByName (String name);
     List<Cafe> getCafesByDescription(String description);
+
+    Cafe getCafeById (Long id);
 }
