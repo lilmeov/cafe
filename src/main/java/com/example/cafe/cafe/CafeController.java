@@ -1,7 +1,8 @@
 package com.example.cafe.cafe;
 
-import com.example.cafe.user.User;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +17,15 @@ public class CafeController {
 
 
     @GetMapping("/mainPage")
-    public String giveCafeListPage(Model model){
+    public String giveCafeListPage(Model model, Authentication authentication){
+
+        if (authentication==null){
+            model.addAttribute("hi", "NeedRegistration");
+        }else{
+            String name = authentication.getName();
+            model.addAttribute("userName", name);
+        }
+
         List<Cafe> cafes = cafeService.getAllCafes();
         model.addAttribute("cafes", cafes);
         return "list-cafe";

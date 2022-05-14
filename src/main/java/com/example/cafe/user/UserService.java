@@ -1,6 +1,7 @@
 package com.example.cafe.user;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -8,5 +9,10 @@ import org.springframework.stereotype.Service;
 public class UserService {
     private final UserRepository userRepository;
 
-
+    public void  saveUser(String userName, String password){
+        BCryptPasswordEncoder encode = new BCryptPasswordEncoder();
+        String encoded = encode.encode(password);
+        User user = new User(userName, encoded, true, "USER");
+        userRepository.save(user);
+    }
 }

@@ -17,11 +17,19 @@ public class User {
     private String username;
     private String password;
     private boolean enabled;
+    private String role;
 
 
     public User(String username, String password, boolean enabled) {
         this.username = username;
         this.password = password;
         this.enabled = enabled;
+    }
+
+    public User(String username, String password, boolean enabled, String role) {
+        this.username = username;
+        this.password = password;
+        this.enabled = enabled;
+        this.role = role;
     }
 }

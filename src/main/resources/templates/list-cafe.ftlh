@@ -16,9 +16,22 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="/cafes/addNewPlace" tabindex="-1" >Add New Place</a>
+                        <#if userName??>
+                            <a class="nav-link" href="/cafes/addNewPlace" tabindex="-1" >Add New Place</a>
+                        </#if>
                     </li>
                 </ul>
+                <p style="padding-right: 35px">
+                    <#if userName??>
+                        Hello, ${userName}
+                    </#if>
+                </p>
+
+                <#if hi??>
+                    <a href="/users/registerPage" class="list-group-item list-group-item-action list-group-item-primary" style="margin-right: 10px; width: 100px">SignUp</a>
+                    <a href="/users/login" class="list-group-item list-group-item-action list-group-item-primary" style="margin-right: 10px; width: 100px">Login</a>
+                </#if>
+
                 <form class="d-flex" method="get" action="/cafes/searchCafes">
                     <input name="name" class="form-control me-2" type="search" placeholder="Search By Name" aria-label="Search" required>
                     <button class="btn btn-outline-success" type="submit">Search</button>
