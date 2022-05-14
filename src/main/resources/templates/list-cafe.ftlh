@@ -37,7 +37,7 @@
                 <div class="card-body">
                     <h5 class="card-title">${cafe.name}</h5>
                     <p class="card-text">${cafe.description}</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+<#--                    <a href="#" class="btn btn-primary">Go somewhere</a>-->
                 </div>
             </div>
             </#list>
