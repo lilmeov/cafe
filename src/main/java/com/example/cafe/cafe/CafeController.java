@@ -29,6 +29,13 @@ public class CafeController {
         return "searched-cafes";
     }
 
+    @GetMapping("/searchByDescriptionCafes")
+    public String giveSearchedByDescriptionCafes(Model model, @RequestParam(value = "desc") String desc){
+        List<Cafe> cafes = cafeService.getCafesByDescription (desc);
+        model.addAttribute("cafes", cafes);
+        return "searched-cafes";
+    }
+
     @GetMapping("/addNewPlace")
     public String giveAddCafePage(Model model){
         return "add-cafe";

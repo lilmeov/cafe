@@ -17,8 +17,8 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                 </ul>
-                <form class="d-flex" method="get" action="/cafes/searchCafes">
-                    <input name="name" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" required>
+                <form class="d-flex" method="get" action="/cafes/searchByDescriptionCafes">
+                    <input name="desc" class="form-control me-2" type="search" placeholder="Search By Description" aria-label="Search" required>
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
             </div>
